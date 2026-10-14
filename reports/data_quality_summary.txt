@@ -1,0 +1,62 @@
+MUTUAL FUND ANALYTICS PROJECT
+DAY 1 - DATA QUALITY SUMMARY
+
+1. DATA INGESTION
+Total CSV datasets provided: 10
+All 10 datasets were loaded and inspected using Pandas.
+
+2. FUND MASTER DATASET
+File: 1788499983024-b042c300-01_fund_master.csv
+Rows: 40
+Columns: 15
+Unique fund houses: 10
+Unique categories: 2
+Unique sub-categories: 12
+Unique risk categories: 5
+
+Missing values: 0
+Duplicate rows: 0
+
+3. NAV HISTORY DATASET
+File: 1788499983331-4389156d-02_nav_history.csv
+Rows: 46,000
+Columns: 3
+Unique scheme codes: 40
+
+4. AMFI SCHEME CODE VALIDATION
+Unique codes in fund master: 40
+Unique codes in NAV history: 40
+Matching scheme codes: 40
+Missing scheme codes: 0
+
+Result: PASS
+
+All 40 unique AMFI scheme codes in the fund
+master were found in the NAV history dataset.
+
+5. DATA QUALITY OBSERVATIONS
+- No missing values were detected in the fund
+  master dataset.
+- No duplicate rows were detected in the fund
+  master dataset.
+- The launch_date column is stored as a string
+  and may be converted to a date type for analysis.
+- Scheme-code coverage between the fund master
+  and NAV history is complete.
+
+6. API INGESTION
+NAV data was requested for six mutual fund
+schemes using the MFAPI API.
+
+The returned scheme metadata and saved CSV files
+should be checked to verify the scheme identities
+and successful data retrieval.
+
+7. CONCLUSION
+The fund master and NAV history datasets have
+complete scheme-code coverage.
+
+The fund master contains no missing values or
+duplicate rows. Additional validation of NAV
+values, dates, and other datasets can be performed
+during subsequent analysis.
